@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <body>
+            <script src="app.js"></script>
+            <h1>drop downs for json data from mongo db</h1>
+            <div>
+                <form>
+                    <div class="C1">
+                        <select class="form-select"  id="distict">
+                            <option value="" >District</option>
+                        </select>
+                    </div>
+                    <br><br>
+                    <div class="C2">
+                        <select class="form-select" id="collegename">
+                            <option value="" >CollegeName</option>
+                        </select>
+                    </div>
+                    <br><br>
+                    <div class="C2">
+                       <label for=" collegecodeid"> CollegeCodeId</label>
+                       <input type="text" id="CollegeCodeId" readonly>
+                    </div>
+                    <br><br>
+                </form>
+            </div>
+        </body>
+        <!-- <script>
+          $(document).ready(() => {
+      // Load districts
+      $.getJSON('/datas', (data) => {
+        const districts = [...new Set(data.map(college => college.District))];
+        const districtSelect = $('#district');
+        const collegeSelect = $('#college');
+        const collegeCodeIdInput = $('#collegeCodeId');
+
+        // Populate district dropdown
+        districts.forEach((district) => {
+          districtSelect.append($('<option></option>').attr('value', district).text(district));
+        });
+
+        // Handle district change event
+        districtSelect.change(() => {
+          const selectedDistrict = districtSelect.val();
+          collegeSelect.empty().append($('<option></option>').attr('value', '').text('Select College'));
+          collegeCodeIdInput.val('');
+
+          if (selectedDistrict !== '') {
+            // Filter colleges based on selected district
+            const filteredColleges = data.filter(college => college.District === selectedDistrict);
+
+            // Populate college dropdown
+            filteredColleges.forEach((college) => {
+              collegeSelect.append($('<option></option>').attr('value', college.CollegeCodeId).text(college.CollegeName));
+            });
+          }
+        });
+
+        // Handle college change event
+        collegeSelect.change(() => {
+          const selectedCollegeCodeId = collegeSelect.val();
+          collegeCodeIdInput.val(selectedCollegeCodeId);
+        });
+      });
+    });
+        </script> -->
+
+    </head>
+</html>
